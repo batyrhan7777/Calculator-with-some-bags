@@ -1,0 +1,60 @@
+body {
+    background: #f2f2f2;
+}
+.calculator {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 340px;
+    margin: 1vw auto;
+    font-weight: bold;
+}
+.display {
+    display: flex;
+    flex: 0 1 100%;
+    height: 56px;
+}
+.display .clear {
+    flex: 0 1 84px;
+    border: 1px solid #333;
+    border-right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    background: #F22613;
+    color: #EEEEEE;
+}
+.display .clear:hover {
+    background: #333;
+    color: #EEEEEE;
+    transition: background .2s, color .2s;
+}
+.display .input {
+    flex: 0 1 250px;
+    border: 1px solid #333;
+    text-align: right;
+    padding-right: 6px;
+    background: #FFF;
+}
+.button {
+    flex: 1 1 83px;
+    border: 1px solid #333;
+    border-right: 0;
+    border-top: 0;
+    text-align: center;
+    height: 46px;
+    line-height: 46px;
+    cursor: pointer;
+    background: #2CD9D7;
+    color: #FFF;
+}
+.button:nth-child(4n + 1) {
+    border-right: 1px solid #333;
+}
+.button:hover {
+    background: #333;
+    color: #EEEEEE;
+    transition: background .2s, color .2s, transform .2s;
+}
