@@ -76,33 +76,30 @@ function calculate({ target }) {
     }
 }
 
+//example str = "20+50*2" etc...
+//output we get ["20", "+", "50", "*", "2"]
 function convertToArray(str) {
     let arr = [];
     let isLastNumber = false;
     for (let i = 0, j = 0; i < str.length; i++) {
         let parseVal = parseFloat(str[i]);
         if (typeof parseVal === "number" && !isNaN(parseVal) || str[i] === ".") {
-            //перед ним стоит число
             if (isLastNumber) {
-                //конкатенируем к числу
                 arr[i - j] += str[i];
-                //перед ним пусто либо стоит оператор
             } else {
-                //добавляем в массив число
                 arr.push(str[i]);
             }
             isLastNumber = true;
             j++;
-            //тут уже добавляем в массив оператор
         } else {
             arr.push(str[i]);
-            //последнее число уже не число, а оператор
             isLastNumber = false;
             j--;
         }
     }
     return arr;
 }
+
 
 
 
